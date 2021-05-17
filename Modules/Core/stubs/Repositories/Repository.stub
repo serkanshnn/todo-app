@@ -1,0 +1,17 @@
+<?php
+
+namespace $CLASS_NAMESPACE$;
+
+use $MODULE_NAMESPACE$\$MODULENAME$\Models\$OBJECT$;
+use Modules\Core\Repositories\Base\BaseEloquentRepository;
+
+class $CLASS$ extends BaseEloquentRepository implements $CLASS$Interface
+{
+    /**
+     * $CLASS$ constructor.
+     */
+    public function __construct()
+    {
+        parent::__construct($OBJECT$::class);
+    }
+}

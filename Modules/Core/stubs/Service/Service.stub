@@ -1,0 +1,27 @@
+<?php
+
+namespace $CLASS_NAMESPACE$;
+
+use $MODULE_NAMESPACE$\$MODULENAME$\DTO\$MODULENAME$\$OBJECT$DTO;
+use $MODULE_NAMESPACE$\$MODULENAME$\Repositories\$OBJECT$\$OBJECT$RepositoryInterface;
+use $MODULE_NAMESPACE$\$MODULENAME$\Services\$OBJECT$\$OBJECT$ServiceInterface;
+use Modules\Core\Services\Base\BaseService;
+
+class $CLASS$ extends BaseService implements $CLASS$Interface
+{
+    /**
+     * @var $OBJECT$RepositoryInterface
+     */
+    private $OBJECT$RepositoryInterface $repository;
+
+
+    /**
+     * $OBJECT$Service constructor.
+     * @param $OBJECT$RepositoryInterface $repository
+     */
+    public function __construct($OBJECT$RepositoryInterface $repository)
+    {
+        parent::__construct($repository, $OBJECT$DTO::class);
+        $this->repository = $repository;
+    }
+}

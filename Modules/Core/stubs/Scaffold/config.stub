@@ -1,0 +1,16 @@
+<?php
+
+return [
+    'name' => '$STUDLY_NAME$',
+    'models' => [
+        
+    ],
+
+    'nova_resources' => [
+       
+    ],
+
+    'api_resources' => [
+       
+    ],
+];

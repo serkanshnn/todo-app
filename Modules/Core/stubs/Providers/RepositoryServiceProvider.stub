@@ -1,0 +1,36 @@
+<?php
+
+namespace $CLASS_NAMESPACE$;
+
+use $MODULE_NAMESPACE$\$MODULENAME$\Repositories\$MODULENAME$\$MODULENAME$Repository;
+use $MODULE_NAMESPACE$\$MODULENAME$\Repositories\$MODULENAME$\$MODULENAME$RepositoryInterface;
+use $MODULE_NAMESPACE$\$MODULENAME$\Services\$MODULENAME$\$MODULENAME$Service;
+use $MODULE_NAMESPACE$\$MODULENAME$\Services\$MODULENAME$\$MODULENAME$ServiceInterface;
+use Illuminate\Support\ServiceProvider;
+
+class RepositoryServiceProvider extends ServiceProvider
+{
+    /**
+     * Register services.
+     *
+     * @return void
+     */
+    public function register()
+    {
+        //repositories
+        $this->app->bind($MODULENAME$RepositoryInterface::class, $MODULENAME$Repository::class);
+
+        //services
+        $this->app->bind($MODULENAME$ServiceInterface::class, $MODULENAME$Service::class);
+    }
+
+    /**
+     * Bootstrap services.
+     *
+     * @return void
+     */
+    public function boot()
+    {
+        //
+    }
+}

@@ -1,0 +1,15 @@
+<?php
+
+namespace $CLASS_NAMESPACE$;
+
+use $MODULE_NAMESPACE$\$MODULENAME$\Models\$OBJECT$;
+use Modules\Core\Services\Base\BaseServiceInterface;
+
+/**
+ * Interface $OBJECT$ServiceInterface
+ * @package Modules\$MODULENAME$\Services\$OBJECT$\$OBJECT$
+ */
+interface $OBJECT$ServiceInterface extends BaseServiceInterface
+{
+
+}

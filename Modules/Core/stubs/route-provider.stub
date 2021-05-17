@@ -1,0 +1,14 @@
+<?php
+
+namespace $NAMESPACE$;
+
+use Modules\Core\Providers\BaseRouteServiceProvider;
+
+class $CLASS$ extends BaseRouteServiceProvider
+{
+   public function boot()
+   {
+       $this->setModuleName('$MODULE$');
+       parent::boot();
+   }
+}

@@ -1,0 +1,11 @@
+<?php
+
+namespace $CLASS_NAMESPACE$;
+
+use $MODULE_NAMESPACE$\$MODULENAME$\Models\$OBJECT$;
+use Modules\Core\Repositories\Base\BaseRepositoryInterface;
+
+interface $CLASS$ extends BaseRepositoryInterface
+{
+
+}

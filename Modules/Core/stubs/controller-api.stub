@@ -1,0 +1,16 @@
+<?php
+
+namespace $CLASS_NAMESPACE$;
+
+use Modules\Core\Controller\BaseApiController;
+use $MODULE_NAMESPACE$\$MODULENAME$\DTO\$MODULENAME$\$MODULENAME$DTO;
+use $MODULE_NAMESPACE$\$MODULENAME$\Services\$MODULENAME$\$MODULENAME$ServiceInterface;
+
+class $CLASS$ extends BaseApiController
+{
+    public function __construct($MODULENAME$ServiceInterface $service)
+    {
+        $this->service = $service;
+        $this->dtoClass = $MODULENAME$DTO::class;
+    }
+}

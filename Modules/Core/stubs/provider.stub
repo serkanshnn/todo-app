@@ -1,0 +1,14 @@
+<?php
+
+namespace $NAMESPACE$;
+
+use Modules\Core\Providers\BaseServiceProvider;
+
+class $CLASS$ extends BaseServiceProvider
+{
+   public function boot()
+   {
+       $this->setModuleName('$MODULE$');
+       parent::boot();
+   }
+}
