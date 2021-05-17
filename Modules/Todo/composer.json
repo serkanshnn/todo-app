@@ -1,0 +1,23 @@
+{
+    "name": "modules/todo",
+    "description": "",
+    "authors": [
+        {
+            "name": "Serkan Şahin",
+            "email": "serkan.shnn@gmail.com"
+        }
+    ],
+    "extra": {
+        "laravel": {
+            "providers": [],
+            "aliases": {
+
+            }
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Modules\\Todo\\": ""
+        }
+    }
+}

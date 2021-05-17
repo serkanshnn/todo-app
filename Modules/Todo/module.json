@@ -1,0 +1,14 @@
+{
+    "name": "Todo",
+    "alias": "todo",
+    "description": "",
+    "keywords": [],
+    "order": 0,
+    "providers": [
+        "Modules\\Todo\\Providers\\TodoServiceProvider",
+        "Modules\\Todo\\Providers\\RepositoryServiceProvider"
+    ],
+    "aliases": {},
+    "files": [],
+    "requires": []
+}
