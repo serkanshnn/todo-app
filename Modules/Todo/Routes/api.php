@@ -11,6 +11,6 @@
 |
 */
 
-Route::middleware('auth:api')->name('api::')->group(function () {
-    Route::apiResource('todo', TodoApiController::class);
+Route::middleware('api')->name('api::')->group(function () {
+    Route::apiResource('todos', TodoApiController::class);
 });

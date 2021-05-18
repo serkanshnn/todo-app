@@ -24,9 +24,14 @@ class TodoDTO extends BaseDTO
     public int $id;
 
     /**
-     * @var int
+     * @var string
      */
-    public int $sample;
+    public string $title;
+
+    /**
+     * @var string|null
+     */
+    public ?string $description;
 
     /**
      * @param $dto
@@ -47,7 +52,8 @@ class TodoDTO extends BaseDTO
     public function validate(array $parameters, bool $updateMode)
     {
         return $this->validator($parameters, [
-            //'name' => 'required|string'
+            'title' => 'required|string',
+            'description' => 'nullable|string',
         ]);
     }
 }
