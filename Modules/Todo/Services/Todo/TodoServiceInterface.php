@@ -11,5 +11,9 @@ use Modules\Core\Services\Base\BaseServiceInterface;
  */
 interface TodoServiceInterface extends BaseServiceInterface
 {
-
+    /**
+     * @param int $id
+     * @return bool
+     */
+    public function checkOrUncheck(int $id): bool;
 }

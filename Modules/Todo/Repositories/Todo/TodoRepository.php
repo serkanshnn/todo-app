@@ -14,4 +14,12 @@ class TodoRepository extends BaseEloquentRepository implements TodoRepositoryInt
     {
         parent::__construct(Todo::class);
     }
+
+    public function checkOrUncheck(int $id): bool
+    {
+        $model = $this->model::find($id);
+        $model->is_active = !$model->is_active;
+        $model->save();
+        return true;
+    }
 }

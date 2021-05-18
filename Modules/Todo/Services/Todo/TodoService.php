@@ -24,4 +24,9 @@ class TodoService extends BaseService implements TodoServiceInterface
         parent::__construct($repository, TodoDTO::class);
         $this->repository = $repository;
     }
+
+    public function checkOrUncheck(int $id): bool
+    {
+        return $this->repository->checkOrUncheck($id);
+    }
 }

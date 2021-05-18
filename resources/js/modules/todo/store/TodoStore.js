@@ -9,6 +9,10 @@ export default new Vue({
 
         async fetchTodoDetail(todoId) {
             return await TodoService.detail(todoId);
+        },
+
+        async checkOrUncheck(todoId) {
+            return await TodoService.checkOrUncheck(todoId);
         }
     }
 });

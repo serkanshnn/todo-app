@@ -13,4 +13,9 @@ class TodoApiController extends BaseApiController
         $this->service = $service;
         $this->dtoClass = TodoDTO::class;
     }
+
+    public function checkOrUncheck($todo_id) {
+        $result = $this->service->checkOrUncheck($todo_id);
+        return $this->ok($result);
+    }
 }

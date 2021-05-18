@@ -13,4 +13,5 @@
 
 Route::middleware('api')->name('api::')->group(function () {
     Route::apiResource('todos', TodoApiController::class);
+    Route::post('todos/{todo_id}/check', 'TodoApiController@checkOrUncheck');
 });
