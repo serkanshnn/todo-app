@@ -1,15 +1,11 @@
-import {createApp, h} from "vue";
-import Home from "./pages/Home";
-import TodosPage from "./modules/todo/pages/TodosPage";
-import CreateTodoPage from "./modules/todo/pages/CreateTodoPage";
-
+import Vue from "vue";
+const files = require.context('./', true, /\.vue$/i)
+files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 const root = document.getElementById('app');
-const vue = createApp({
-    render(){
-        return h(vue.component(root.dataset.component), JSON.parse(root.dataset.props));
-    }
-});
-vue.component('Home', Home);
-vue.component('TodosPage', TodosPage);
-vue.component('CreateTodoPage', CreateTodoPage);
-vue.mount('#app');
+new Vue({
+    render: h => h(
+        Vue.component(root.dataset.component), {
+            props: JSON.parse(root.dataset.props)
+        }
+    )
+}).$mount(root);

@@ -34,6 +34,11 @@ class TodoDTO extends BaseDTO
     public ?string $description;
 
     /**
+     * @var bool
+     */
+    public bool $is_active;
+
+    /**
      * @param $dto
      * @param array $originalData
      * @return TodoDTO

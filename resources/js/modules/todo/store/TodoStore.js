@@ -1,15 +1,14 @@
-import {createApp} from "vue";
 import * as TodoService from "../services/TodoService";
+import Vue from "vue";
 
-export default createApp({
-    setup() {
-        async function fetchAllTodos() {
+export default new Vue({
+    methods: {
+        async fetchAllTodos() {
             return await TodoService.all();
-        }
+        },
 
-        async function fetchTodoDetail(todoId) {
+        async fetchTodoDetail(todoId) {
             return await TodoService.detail(todoId);
         }
-        return {fetchAllTodos, fetchTodoDetail};
     }
 });
