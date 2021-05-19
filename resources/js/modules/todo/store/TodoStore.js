@@ -11,6 +11,10 @@ export default new Vue({
             return await TodoService.detail(todoId);
         },
 
+        async createTodo(params) {
+            return await TodoService.create(params);
+        },
+
         async checkOrUncheck(todoId) {
             return await TodoService.checkOrUncheck(todoId);
         }

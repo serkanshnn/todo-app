@@ -11,3 +11,7 @@ export const detail = (id) => {
 export const checkOrUncheck = (id) => {
     return axios.post(`/api/todos/${id}/check`);
 }
+
+export const create = (params) => {
+    return axios.post(`/api/todos`, params);
+}

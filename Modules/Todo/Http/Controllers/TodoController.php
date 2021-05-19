@@ -39,14 +39,6 @@ class TodoController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
      * Show the specified resource.
      */
     public function show(int $todo_id)
@@ -62,21 +54,5 @@ class TodoController extends Controller
     {
         $todo = $this->service->find($todo_id);
         return View::component('EditTodoPage', ['data', $todo]);
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, int $todo_id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(int $todo_id)
-    {
-        //
     }
 }
