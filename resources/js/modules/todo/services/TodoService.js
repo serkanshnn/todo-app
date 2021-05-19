@@ -19,3 +19,7 @@ export const create = (params) => {
 export const destroy = (id) => {
     return axios.delete(`/api/todos/${id}`);
 }
+
+export const update = (id, params) => {
+    return axios.put(`/api/todos/${id}`, params);
+}

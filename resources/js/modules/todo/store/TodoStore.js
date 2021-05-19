@@ -20,6 +20,10 @@ export default new Vue({
             return await TodoService.destroy(todoId);
         },
 
+        async updateTodo(id, params) {
+            return await TodoService.update(id, params);
+        },
+
         async checkOrUncheck(todoId) {
             return await TodoService.checkOrUncheck(todoId);
         }

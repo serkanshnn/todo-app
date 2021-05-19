@@ -53,6 +53,6 @@ class TodoController extends Controller
     public function edit(int $todo_id)
     {
         $todo = $this->service->find($todo_id);
-        return View::component('EditTodoPage', ['data', $todo]);
+        return View::component('EditTodoPage', ['data' => $todo]);
     }
 }

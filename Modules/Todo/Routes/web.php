@@ -11,3 +11,4 @@
 |
 */
 Route::resource('/todos', TodoController::class);
+Route::get('/', [\Modules\Todo\Http\Controllers\TodoController::class, 'index'])->name('home');

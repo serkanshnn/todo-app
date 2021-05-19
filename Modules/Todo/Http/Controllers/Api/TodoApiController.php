@@ -29,6 +29,21 @@ class TodoApiController extends BaseApiController
         return $this->created($result);
     }
 
+    public function update(int $id, Request $request)
+    {
+        $parameters = $request->all();
+        $dto = new $this->dtoClass();
+        $validationResult = $dto->validate($parameters, true);
+        if (!empty($validationResult) && count($validationResult) > 0) {
+            return $this->notValidated($validationResult);
+        }
+
+        $dtoInstance = ($dto->toDto($parameters, false));
+        $result = $this->service->update($id, $dtoInstance);
+
+        return $this->updated($result);
+    }
+
     public function checkOrUncheck($todo_id) {
         $result = $this->service->checkOrUncheck($todo_id);
         return $this->ok($result);

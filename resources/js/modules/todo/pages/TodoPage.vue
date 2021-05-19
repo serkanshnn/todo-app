@@ -9,7 +9,7 @@
                         </h3>
                     </div>
                     <div class="ml-4 mt-2 flex-shrink-0">
-                        <a href="/todos" class="relative inline-flex items-center px-4 py-2 border border-gray-300 shadow-sm text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                        <a href="/" class="relative inline-flex items-center px-4 py-2 border border-gray-300 shadow-sm text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
                             Back
                         </a>
                         <a :href="'/todos/'+model.id+'/edit'" class="relative inline-flex items-center px-4 py-2 ml-2 border border-gray-300 shadow-sm text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
@@ -72,7 +72,6 @@ export default {
     },
     methods: {
         handleModel(payload) {
-            console.log(payload);
             this.model = new TodoModel();
             this.model.id = payload.id;
             this.model.title = payload.title;
