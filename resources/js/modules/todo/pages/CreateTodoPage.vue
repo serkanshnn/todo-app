@@ -17,7 +17,7 @@
                                 Title
                             </label>
                             <div class="mt-1 sm:mt-0 sm:col-span-2">
-                                <input type="text" name="first_name" id="first_name" v-model="title" autocomplete="given-name" class="max-w-lg block w-full shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:max-w-xs sm:text-sm border-gray-300 rounded-md">
+                                <input type="text" name="first_name" id="first_name" v-model="model.title" autocomplete="given-name" class="max-w-lg block w-full shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:max-w-xs sm:text-sm border-gray-300 rounded-md">
                             </div>
                         </div>
 
@@ -26,7 +26,7 @@
                                 Description
                             </label>
                             <div class="mt-1 sm:mt-0 sm:col-span-2">
-                                <textarea id="about" name="about" rows="3" v-model="description" class="max-w-lg shadow-sm block w-full focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm border-gray-300 rounded-md"></textarea>
+                                <textarea id="about" name="about" rows="3" v-model="model.description" class="max-w-lg shadow-sm block w-full focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm border-gray-300 rounded-md"></textarea>
                             </div>
                         </div>
                     </div>
@@ -58,8 +58,11 @@ export default {
     },
     data() {
         return {
-            title: '',
-            description: '',
+            model: {
+                title: '',
+                description: '',
+                is_active: false
+            },
             alertData: '',
             alertType: '',
             hasAlert: false,
@@ -67,17 +70,13 @@ export default {
     },
     methods: {
         handleCreateTodo() {
-            TodoStore.createTodo({
-                title: this.title,
-                description: this.description,
-                is_active: false
-            }).then(response => {
+            TodoStore.createTodo(this.model).then(response => {
                 if (response.status === 201) {
                     this.alertType = 'success';
                     this.alertData = {};
                     this.hasAlert = true;
-                    this.title = '';
-                    this.description = '';
+                    this.model.title = '';
+                    this.model.description = '';
                 }
             })
             .catch((error) => {

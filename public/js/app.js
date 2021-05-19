@@ -2090,8 +2090,11 @@ __webpack_require__.r(__webpack_exports__);
   },
   data: function data() {
     return {
-      title: '',
-      description: '',
+      model: {
+        title: '',
+        description: '',
+        is_active: false
+      },
       alertData: '',
       alertType: '',
       hasAlert: false
@@ -2101,17 +2104,13 @@ __webpack_require__.r(__webpack_exports__);
     handleCreateTodo: function handleCreateTodo() {
       var _this = this;
 
-      _store_TodoStore__WEBPACK_IMPORTED_MODULE_0__.default.createTodo({
-        title: this.title,
-        description: this.description,
-        is_active: false
-      }).then(function (response) {
+      _store_TodoStore__WEBPACK_IMPORTED_MODULE_0__.default.createTodo(this.model).then(function (response) {
         if (response.status === 201) {
           _this.alertType = 'success';
           _this.alertData = {};
           _this.hasAlert = true;
-          _this.title = '';
-          _this.description = '';
+          _this.model.title = '';
+          _this.model.description = '';
         }
       })["catch"](function (error) {
         if (error.response.status === 412) {
@@ -21524,8 +21523,8 @@ var render = function() {
                             {
                               name: "model",
                               rawName: "v-model",
-                              value: _vm.title,
-                              expression: "title"
+                              value: _vm.model.title,
+                              expression: "model.title"
                             }
                           ],
                           staticClass:
@@ -21536,13 +21535,13 @@ var render = function() {
                             id: "first_name",
                             autocomplete: "given-name"
                           },
-                          domProps: { value: _vm.title },
+                          domProps: { value: _vm.model.title },
                           on: {
                             input: function($event) {
                               if ($event.target.composing) {
                                 return
                               }
-                              _vm.title = $event.target.value
+                              _vm.$set(_vm.model, "title", $event.target.value)
                             }
                           }
                         })
@@ -21577,20 +21576,24 @@ var render = function() {
                             {
                               name: "model",
                               rawName: "v-model",
-                              value: _vm.description,
-                              expression: "description"
+                              value: _vm.model.description,
+                              expression: "model.description"
                             }
                           ],
                           staticClass:
                             "max-w-lg shadow-sm block w-full focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm border-gray-300 rounded-md",
                           attrs: { id: "about", name: "about", rows: "3" },
-                          domProps: { value: _vm.description },
+                          domProps: { value: _vm.model.description },
                           on: {
                             input: function($event) {
                               if ($event.target.composing) {
                                 return
                               }
-                              _vm.description = $event.target.value
+                              _vm.$set(
+                                _vm.model,
+                                "description",
+                                $event.target.value
+                              )
                             }
                           }
                         })
