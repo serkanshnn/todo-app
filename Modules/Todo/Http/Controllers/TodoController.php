@@ -52,7 +52,7 @@ class TodoController extends Controller
     public function show(int $todo_id)
     {
         $todo = $this->service->find($todo_id);
-        return View::component('CreateTodoPage', ['todo' => $todo]);
+        return View::component('TodoPage', ['data' => $todo]);
     }
 
     /**
@@ -60,7 +60,8 @@ class TodoController extends Controller
      */
     public function edit(int $todo_id)
     {
-        return view('todo::edit');
+        $todo = $this->service->find($todo_id);
+        return View::component('EditTodoPage', ['data', $todo]);
     }
 
     /**
