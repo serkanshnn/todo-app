@@ -15,3 +15,7 @@ export const checkOrUncheck = (id) => {
 export const create = (params) => {
     return axios.post(`/api/todos`, params);
 }
+
+export const destroy = (id) => {
+    return axios.delete(`/api/todos/${id}`);
+}

@@ -1,5 +1,6 @@
 import * as TodoService from "../services/TodoService";
 import Vue from "vue";
+import {deleteTodo} from "../services/TodoService";
 
 export default new Vue({
     methods: {
@@ -13,6 +14,10 @@ export default new Vue({
 
         async createTodo(params) {
             return await TodoService.create(params);
+        },
+
+        async deleteTodo(todoId) {
+            return await TodoService.destroy(todoId);
         },
 
         async checkOrUncheck(todoId) {

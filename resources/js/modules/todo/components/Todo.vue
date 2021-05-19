@@ -16,7 +16,8 @@
         </td>
         <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
             <a href="#" @click="handleCheckStatus" :class="model.is_active ? 'text-yellow-600 hover:text-yellow-900' : 'text-green-600 hover:text-green-900'" class="p-3">{{ getCheckButtonLabel }}</a>
-            <a :href="'/todos/'+this.model.id" class="text-blue-600 hover:text-blue-900">Detail</a>
+            <a :href="'/todos/'+this.model.id" class="text-blue-600 hover:text-blue-900 p-3">Detail</a>
+            <a href="#" @click="handleDeleteTodo" class="text-red-600 hover:text-red-900 p-3">Delete</a>
         </td>
     </tr>
 </template>
@@ -52,6 +53,15 @@ export default {
               .finally(() => {
                   this.$emit('fetch-todos')
               });
+        },
+        handleDeleteTodo() {
+            TodoStore.deleteTodo(this.model.id)
+                .catch((error) => {
+                    console.log(error);
+                })
+                .finally(() => {
+                    this.$emit('fetch-todos')
+                });
         }
     },
     computed: {
